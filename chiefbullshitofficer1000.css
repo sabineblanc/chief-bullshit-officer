@@ -1,0 +1,108 @@
+ body {
+     font-family: Futura,Trebuchet MS,Arial,sans-serif;
+
+ }
+
+ h1 {
+     position: relative;
+     width:45%;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top:2px;
+     text-align: center;
+
+ }
+
+ #go {
+     position: relative;
+     width:25%;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top:50px;
+     cursor: pointer;
+     font-size: 24px;
+
+     padding:       8px 20px;
+     background:    #0ff url('http://dabuttonfactory.com/button.png?w=1&h=40&bgt=gradient&bgc=f0f&ebgc=0ff') repeat-x;
+     background:    -moz-linear-gradient(#f0f, #0ff);
+     background:    -o-linear-gradient(#f0f, #0ff);
+     background:    -webkit-linear-gradient(#f0f, #0ff);
+     background:    linear-gradient(#f0f, #0ff);
+     border-radius: 5px;
+     color:         #fff;
+     font:          normal 700 24px/1;
+     text-align:    center;
+
+ }
+
+#titre {
+    position:fixed;
+    width:600px;
+    left:50%;
+    margin-left: -300px;
+    top:150px;
+    font-size: 24px;
+    text-align: center;
+
+}
+ #phrase {
+     position:fixed;
+     width:600px;
+     left:50%;
+     margin-left: -300px;
+     top:210px;
+     font-size: 24px;
+     text-align: center;
+
+ }
+
+ #enVrai {
+     position:fixed;
+     width:700px;
+     left:50%;
+     margin-left: -300px;
+     top:260px;
+     font-size: 24px;
+     text-align: center;
+
+ }
+
+ #twitterBox {
+     position:fixed;
+     width:300px;
+     left:50%;
+     margin-left: -150px;
+     top:450px;
+     font-size: 16px;
+
+ }
+
+ #imageHomme {
+     position: fixed;
+     bottom: 2px;
+     left: 3%;
+     z-index:-1;
+ }
+
+ #imageFemme {
+     position: fixed;
+     bottom: 30px;
+     right: 20px;
+     z-index:-1;
+
+ }
+
+ #credit {
+
+     position:fixed;
+     width:100%;
+     bottom:0;
+     left:4%;
+     font-size: 12px;
+     cursor: pointer;
+
+ }
+
+
+
+

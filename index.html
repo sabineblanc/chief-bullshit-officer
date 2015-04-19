@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head lang="fr">
+    <meta charset="UTF-8">
+
+    <title>Chief bullshit officer</title>
+
+    <meta property="og:image" content="http://sabineblanc.net/chiefbullshitofficer/managerminitel.jpg"/>
+    <meta property="og:title" content="Chief bullshit officer"/>
+    <meta property="og:url" content="http://sabineblanc.net/chiefbullshitofficer/"/>
+    <meta property="og:local" content="fr_FR"/>
+    <meta property="og:description" content="Quand je serai grand.e, je serai chief bullshit officer"/>
+    <meta property="description" content="Quand je serai grand.e, je serai chief bullshit officer"/>
+    <meta property="twitter:image:src" content="http://sabineblanc.net/chiefbullshitofficer/managerminitel.jpg"/>
+    <meta property="twitter:title" content="Chief bullshit officer"/>
+    <meta property="twitter:card" content="summary"/>
+    <meta property="twitter:description" content="Quand je serai grand.e, je serai chief bullshit officer"/>
+    <meta property="twitter:site" content="@sabineblanc"/>
+    <meta name="viewport" content="width=device-width"/>
+
+    <link rel="stylesheet" media="(min-width: 1000px)"  href="chiefbullshitofficer1000.css">
+    <link rel="stylesheet" media="(max-width: 320px)"  href="chiefbullshitofficer320.css">
+    <link rel="stylesheet" media="(min-width: 600px)"  href="chiefbullshitofficer600.css">
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+
+<body>
+
+
+<h1>Quand je serai grand.e, <br>je serai chief bullshit officer</h1>
+
+<div id="go">Quel titre mirifique voulez-vous ?</div>
+<div id="titre"></div>
+<div id="phrase"></div>
+<div id="twitterBox"><p>Partagez votre vision sur les social media</p></div>
+
+<div id="imageFemme"><img src="managerFemme.jpg" width="350" height="700"></a></div>
+<div id="imageHomme"><img src="managerminitel.jpg" width="350" height="576"></a></div>
+<div id="enVrai"></div>
+<div id="credit">GNU GPL V2 Sabine Blanc - Crédits <span id="doudou" style="display: none">de gauche à droite : manager <a
+        href="http://pixabay.com/fr/bureau-l-homme-gestionnaire-207219/">Pixabay CC0 Public Domain idealpestcontrol</a> ; minitel <a
+        href="https://www.flickr.com/photos/zigazou76/15520734006/">Flickr CC by Frédéric BISSON
+</a>  ; manager <a href="https://www.flickr.com/photos/125303894@N06/14365668676/">Flickr CC by Steve Wilson</a> ; Apple IIc <a
+        href="http://de.wikipedia.org/wiki/Datei:Apple_IIc_with_monitor.jpg">Flickr CC by Bilby</a> </span></div>
+
+
+<script>
+    window.twttr = (function (d, s, id) {
+        var t, js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        return window.twttr || (t = {
+            _e: [],
+            ready: function (f) {
+                t._e.push(f)
+            }
+        });
+    }(document, "script", "twitter-wjs"));
+
+</script>
+
+<script>
+
+    $(document).ready(function () {
+
+        var iter = -1;
+        $("#go").click(function () {
+            $("#go").html("Vous n'auriez pas un autre titre et une ambition plus innovante ?").css('margin-top',"250px");
+            $("#titre").text("I am the" + choixMots() + ", bitch/asshole,").show();
+            $("#phrase").html(choixPhrase()).show();
+            createButton();
+            iter+=1;
+
+
+            var nomReel = ["chief data officer", "chief data scientist", "chief analytics officer", "deputy chief technology officer", "chief data architect", "chief technology officer", "global chief data officer", "data management team leader"];
+            var titre2 = "I am the " + nomReel[iter] + ", bitch/asshole,";
+             if(iter==nomReel.length) {
+                 iter = 0
+             }
+
+                if ($("#titre").html() == titre2) {
+                    $("#enVrai").html("Ce titre existe vraiment, et oui.");
+
+                }
+                else {
+                    $("#enVrai").html("Dans la vie, ce titre n'existe pas. Mais vous pourriez vraiment être " + nomReel[iter] + ", par exemple.");
+
+                }
+        });
+
+        $("#credit").click(function () {
+            $("#doudou").fadeToggle();
+        });
+
+    });
+
+    var generateur = {
+        degre: ["chief", "master", "head", "lead", "headmaster"],
+        matiere: ["data", "analytics", "innovation", "performance", "disruption", "technology"],
+        intitule: ["officer","manager", "editor", "scientist", "director", "evangelist", "architect", "leader"],
+        phraseVerbe: ["disrupter", "améliorer", "résoudre", "révolutionner", "transmuter", "transformer", "innover", "solutionner"],
+        phraseNom: ["les politiques publiques.", "l'entreprise.", "la performance des villes.", "les vrais problèmes des gens.", "notre position de leader.", "les irritants.", "l'efficacité.", "la compétitivité.", "les start-ups."]
+    };
+
+
+    var choixMots = function () {
+        var nomTitre = "";
+        var parties = ["degre", "matiere", "intitule"];
+        for (var iter = 0; iter < 3; iter += 1) {
+            var partie = parties[iter];
+            var tableau = generateur[partie];
+            var texte = tableau[Math.floor(Math.random() * tableau.length)];
+            nomTitre += " " + texte;
+        }
+
+        return  nomTitre
+
+    };
+
+    var choixPhrase = function () {
+        var phrase = "";
+        var parties = ["phraseVerbe", "phraseNom"];
+        for (var iter = 0; iter < 2; iter += 1) {
+            var partie = parties[iter];
+            var tableau = generateur[partie];
+            var texte = tableau[Math.floor(Math.random() * tableau.length)];
+            phrase += " " + texte;
+        }
+        return  "Et je veux" + phrase
+    };
+
+
+    // bouton Twitter de partage dynamique
+
+    createButton();
+
+    function createButton() {
+
+        // Remove Whatever is in the tweeetbox div if theres something
+        //there to avoid adding multiple tweetbuttons
+
+        var elem = document.getElementById('twitterbutton');
+        if (elem != null) {
+            elem.parentNode.removeChild(elem);
+        }
+
+        // créer un nouvel élément Twitter
+        var texteTwitter = $("#titre").html();
+
+        var link = document.createElement('a');
+        link.setAttribute('href', 'https://twitter.com/share');
+        link.setAttribute('class', 'twitter-share-button');
+        link.setAttribute('id', 'twitterbutton');
+        link.setAttribute('data-url', 'http://sabineblanc.net/chiefbullshitofficer');
+        link.setAttribute("data-text", texteTwitter + " et vous ?");
+
+        // Le place dans la div twitterBox
+        tweetdiv = document.getElementById('twitterBox');
+        tweetdiv.appendChild(link);
+
+        twttr.widgets.load(); //very important
+    }
+
+
+</script>
+</body>
+</html>
